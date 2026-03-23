@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>Kohinn Portfolio</title>
@@ -8,38 +8,118 @@
 <body>
 
 <header>
-    <h1>Kohinn/コヒン</h1>
-    <p>Character Illustrator / VTuber Artist</p>
-    <p>Email: kohinn.ver2@gmail.com</p>
-    <p><a href="https://twitter.com/youraccount">Twitter: https://x.com/V_Kohinn</a></p>
+    <h1>Kohinn / コヒン</h1>
+    <p class="role">Character Illustrator / VTuber Artist</p>
+    <p class="about">
+        独学でイラストを学び、現在はフルタイム勤務と並行して<br>
+        キャラクターイラストを中心に活動しています。<br>
+        見た人の目を引く、魅力的なキャラクター表現を得意としています。
+    </p>
+
+    <div class="profile-block">
+        <div class="profile-column">
+            <h2>スキル</h2>
+            <ul>
+                <li>キャラクターイラスト（立ち絵 / 表情差分 / カラーイラスト）</li>
+                <li>Webサイト制作（HTML / CSS）</li>
+            </ul>
+        </div>
+        <div class="profile-column">
+            <h2>経歴</h2>
+            <ul>
+                <li>2025年4月　イラストレーターとして本格的に活動開始</li>
+                <li>2025年5月　初の有償依頼を受注</li>
+            </ul>
+        </div>
+    </div>
 </header>
 
-<section id="main-visual">
-    <h2>立ち絵</h2>
-    <img src="images/fullbody.png" alt="Full body illustration">
-</section>
+<main>
 
-<section id="expressions">
-    <h2>フルカラーイラスト</h2>
-    <div class="grid">
-        <img src="img/イラスト6ddd.webp" alt="" loading="lazy">
-        <img src="img/イラスト4dzen.webp" alt="" loading="lazy">
-        <img src="siba_brlkj.webp" alt="" loading="lazy">
-    </div>
-</section>
+    <!-- 立ち絵＋説明 -->
+    <section id="standing">
+        <h2>立ち絵</h2>
+        <div class="two-column">
+            <div class="image-column">
+                <img src="img/fullbody.png" alt="Full body illustration">
+            </div>
+            <div class="text-column">
+                <h3>キャラクター概要</h3>
+                <p>清楚で落ち着いた雰囲気の学生キャラクターをイメージしてデザインしました。</p>
+                <p>シンプルなシルエットと、親しみやすい印象になるよう配色とポーズを意識しています。</p>
+                <ul class="meta">
+                    <li>制作時間： 約○時間</li>
+                    <li>使用ソフト： CLIP STUDIO PAINT</li>
+                    <li>担当範囲： デザイン〜線画〜着彩</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section id="color">
-    <h2>線画サンプル</h2>
-    <div class="grid">
-        
-    </div>
-</section>
+    <!-- フルカラーイラスト -->
+    <section id="fullcolor">
+        <h2>フルカラーイラスト</h2>
+
+        <div class="work-block">
+            <div class="image-column">
+                <img src="img/イラスト6ddd.webp" alt="Full color illustration 1" loading="lazy">
+            </div>
+            <div class="text-column">
+                <h3>フルカラーイラスト 01</h3>
+                <p>キャラクターの感情表現と、光のコントラストを意識した一枚です。</p>
+                <ul class="meta">
+                    <li>制作時間： 約○時間</li>
+                    <li>使用ソフト： CLIP STUDIO PAINT</li>
+                    <li>得意分野： キャラクターイラスト / 配色</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="work-block">
+            <div class="image-column">
+                <img src="img/イラスト4dzen.webp" alt="Full color illustration 2" loading="lazy">
+            </div>
+            <div class="text-column">
+                <h3>フルカラーイラスト 02</h3>
+                <p>動きのあるポーズと、画面全体のバランスを重視して制作しました。</p>
+                <ul class="meta">
+                    <li>制作時間： 約○時間</li>
+                    <li>使用ソフト： CLIP STUDIO PAINT</li>
+                    <li>得意分野： キャラクターデザイン / 構図</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="work-block">
+            <div class="image-column">
+                <img src="img/siba_brlkj.webp" alt="Full color illustration 3" loading="lazy">
+            </div>
+            <div class="text-column">
+                <h3>フルカラーイラスト 03</h3>
+                <p>柔らかい雰囲気と、落ち着いた色味で世界観を表現した作品です。</p>
+                <ul class="meta">
+                    <li>制作時間： 約○時間</li>
+                    <li>使用ソフト： CLIP STUDIO PAINT</li>
+                    <li>得意分野： 雰囲気作り / 色彩設計</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 線画サンプル（あとで追加でOK） -->
+    <section id="lineart">
+        <h2>線画サンプル</h2>
+        <p class="coming-soon">※線画サンプルは現在準備中です。</p>
+    </section>
+
+</main>
 
 <footer>
     <h2>連絡先</h2>
-    <p>Email: kohinn.ver2@gmail.com</p>
-    <p>Twitter: https://x.com/V_Kohinn</p>
+    <p>Email：<a href="mailto:kohinn.ver2@gmail.com">kohinn.ver2@gmail.com</a></p>
+    <p>Twitter：<a href="https://x.com/V_Kohinn" target="_blank">@V_Kohinn</a></p>
 </footer>
 
 </body>
 </html>
+
