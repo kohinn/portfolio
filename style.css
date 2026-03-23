@@ -44,6 +44,10 @@ h3 {
 /* ============================
    自己紹介
 ============================ */
+#about h2 {
+    margin-top: 32px;
+}
+
 .role, .about {
     text-align: center;
     margin-bottom: 16px;
@@ -51,7 +55,7 @@ h3 {
 }
 
 /* ============================
-   目次
+   目次（アコーディオン）
 ============================ */
 #toc {
     background: #f0f0f0;
@@ -64,22 +68,24 @@ h3 {
     border: none;
     padding-left: 0;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 #toc ul {
     list-style: none;
     padding-left: 0;
     line-height: 1.9;
+    margin: 0;
 }
 
-#toc a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1rem;
-}
-
-#toc a:hover {
-    text-decoration: underline;
+/* スマホでは閉じる */
+@media (max-width: 768px) {
+    #toc ul {
+        display: none;
+    }
+    #toc.open ul {
+        display: block;
+    }
 }
 
 /* ============================
@@ -93,12 +99,23 @@ h3 {
     margin-bottom: 48px;
 }
 
-/* 左右交互レイアウト */
-.work-block.left {
+/* ============================
+   左右交互レイアウト（自動）
+============================ */
+#fullcolor .work-block:nth-child(2n+1) {
+    flex-direction: row; /* 1,3,5... 左画像 */
+}
+
+#fullcolor .work-block:nth-child(2n) {
+    flex-direction: row-reverse; /* 2,4,6... 右画像 */
+}
+
+/* 2025年作品も交互に */
+#archive .work-block:nth-child(2n+1) {
     flex-direction: row;
 }
 
-.work-block.right {
+#archive .work-block:nth-child(2n) {
     flex-direction: row-reverse;
 }
 
@@ -161,6 +178,7 @@ footer {
 footer h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
+    border-left: none; /* ← 縦線を消す */
 }
 
 footer p {
@@ -183,9 +201,7 @@ footer p {
 
     /* 2カラム → 1カラムに */
     .two-column,
-    .work-block,
-    .work-block.left,
-    .work-block.right {
+    .work-block {
         flex-direction: column;
         gap: 16px;
     }
