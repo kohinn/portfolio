@@ -42,7 +42,7 @@ h3 {
 }
 
 /* ============================
-   自己紹介（目次の下）
+   自己紹介
 ============================ */
 #about h2 {
     margin-top: 32px;
@@ -54,26 +54,47 @@ h3 {
     font-size: 1rem;
 }
 
+/* プロフィール2カラム（PC） */
+.profile-block {
+    display: flex;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.profile-column {
+    flex: 1;
+}
+
 /* ============================
    目次（中央寄せ＋開閉式）
 ============================ */
 #toc {
     background: #f0f0f0;
-    padding: 16px;
+    padding: 16px 24px;
     margin: 24px auto;
     border-radius: 6px;
     text-align: center;
-    width: fit-content;
+    width: 260px; /* 細すぎないように固定幅 */
 }
 
 #toc h2 {
+    border: none;
+    padding-left: 0;
+    font-size: 1.2rem;
     cursor: pointer;
+    margin-bottom: 8px;
 }
 
 #toc ul {
     list-style: none;
     padding-left: 0;
     margin: 0;
+    line-height: 1.9;
+}
+
+/* デフォルトは開いておく */
+#toc ul {
+    display: block;
 }
 
 #toc ul li {
@@ -83,19 +104,17 @@ h3 {
 #toc a {
     text-decoration: none;
     color: #333;
-    font-size: 1rem;
+    font-size: 0.98rem;
 }
 
 #toc a:hover {
     text-decoration: underline;
 }
 
-/* スマホでは閉じる */
-@media (max-width: 768px) {
-    #toc ul { display: none; }
-    #toc.open ul { display: block; }
+/* 画面幅に関係なく「開閉」できるようにする */
+#toc.closed ul {
+    display: none;
 }
-
 
 /* ============================
    2カラム（PC）
@@ -108,20 +127,14 @@ h3 {
     margin-bottom: 48px;
 }
 
-/* ============================
-   左右交互レイアウト（確実に反映）
-============================ */
+/* 左右交互：クラスで制御（HTMLと対応） */
+.work-block.left {
+    flex-direction: row;          /* 画像 → テキスト */
+}
 
-/* フルカラーイラスト */
-#fullcolor .work-block:nth-of-type(1) { flex-direction: row; }
-#fullcolor .work-block:nth-of-type(2) { flex-direction: row-reverse; }
-#fullcolor .work-block:nth-of-type(3) { flex-direction: row; }
-
-/* 2025年作品 */
-#archive .work-block:nth-of-type(1) { flex-direction: row; }
-#archive .work-block:nth-of-type(2) { flex-direction: row-reverse; }
-
-
+.work-block.right {
+    flex-direction: row-reverse;  /* テキスト → 画像 */
+}
 
 /* ============================
    画像
@@ -203,8 +216,10 @@ footer p {
         font-size: 1.2rem;
     }
 
+    /* 2カラム → 1カラム */
     .two-column,
-    .work-block {
+    .work-block,
+    .profile-block {
         flex-direction: column;
         gap: 16px;
     }
@@ -218,6 +233,7 @@ footer p {
     }
 
     #toc {
+        width: 80%;
         padding: 12px;
     }
 
