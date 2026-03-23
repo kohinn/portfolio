@@ -42,7 +42,7 @@ h3 {
 }
 
 /* ============================
-   自己紹介
+   自己紹介（目次の下）
 ============================ */
 #about h2 {
     margin-top: 32px;
@@ -55,13 +55,14 @@ h3 {
 }
 
 /* ============================
-   目次（アコーディオン）
+   目次（中央寄せ＋開閉式）
 ============================ */
 #toc {
     background: #f0f0f0;
     padding: 16px;
-    margin: 24px 0;
+    margin: 24px auto;
     border-radius: 6px;
+    text-align: center;
 }
 
 #toc h2 {
@@ -76,6 +77,21 @@ h3 {
     padding-left: 0;
     line-height: 1.9;
     margin: 0;
+    display: block;
+}
+
+#toc ul li {
+    margin: 4px 0;
+}
+
+#toc a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+}
+
+#toc a:hover {
+    text-decoration: underline;
 }
 
 /* スマホでは閉じる */
@@ -100,22 +116,25 @@ h3 {
 }
 
 /* ============================
-   左右交互レイアウト（自動）
+   左右交互レイアウト（確実に反映）
 ============================ */
-#fullcolor .work-block:nth-child(2n+1) {
-    flex-direction: row; /* 1,3,5... 左画像 */
+
+/* フルカラーイラスト */
+#fullcolor .work-block:nth-of-type(1) {
+    flex-direction: row; /* 左 */
+}
+#fullcolor .work-block:nth-of-type(2) {
+    flex-direction: row-reverse; /* 右 */
+}
+#fullcolor .work-block:nth-of-type(3) {
+    flex-direction: row; /* 左 */
 }
 
-#fullcolor .work-block:nth-child(2n) {
-    flex-direction: row-reverse; /* 2,4,6... 右画像 */
-}
-
-/* 2025年作品も交互に */
-#archive .work-block:nth-child(2n+1) {
+/* 2025年作品 */
+#archive .work-block:nth-of-type(1) {
     flex-direction: row;
 }
-
-#archive .work-block:nth-child(2n) {
+#archive .work-block:nth-of-type(2) {
     flex-direction: row-reverse;
 }
 
@@ -166,7 +185,7 @@ h3 {
 }
 
 /* ============================
-   連絡先（強調）
+   連絡先（縦線なし）
 ============================ */
 footer {
     background: #e8f0ff;
@@ -178,7 +197,7 @@ footer {
 footer h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-    border-left: none; /* ← 縦線を消す */
+    border-left: none;
 }
 
 footer p {
@@ -187,7 +206,7 @@ footer p {
 }
 
 /* ============================
-   スマホ対応（重要）
+   スマホ対応
 ============================ */
 @media (max-width: 768px) {
 
@@ -199,19 +218,16 @@ footer p {
         font-size: 1.2rem;
     }
 
-    /* 2カラム → 1カラムに */
     .two-column,
     .work-block {
         flex-direction: column;
         gap: 16px;
     }
 
-    /* 画像サイズ調整 */
     .image-column img {
         max-width: 100%;
     }
 
-    /* テキストサイズ調整 */
     .text-column {
         font-size: 0.95rem;
     }
@@ -232,5 +248,3 @@ footer p {
         font-size: 1rem;
     }
 }
-
-
