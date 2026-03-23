@@ -1,3 +1,49 @@
+/* 全体 */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* コンテナ幅 */
+header, section, footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 16px;
+}
+
+/* 見出し */
+h1, h2, h3 {
+    margin: 0 0 16px;
+    font-weight: 600;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    border-left: 4px solid #333;
+    padding-left: 8px;
+    margin-bottom: 24px;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+/* プロフィール */
+.role, .about {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+
 /* 目次 */
 #toc {
     background: #f0f0f0;
@@ -7,44 +53,146 @@
 }
 
 #toc h2 {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
+    border: none;
+    padding-left: 0;
+    font-size: 1.2rem;
 }
 
 #toc ul {
     list-style: none;
     padding-left: 0;
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 #toc a {
     text-decoration: none;
     color: #333;
+    font-size: 1rem;
 }
 
 #toc a:hover {
     text-decoration: underline;
 }
 
-/* 左右交互レイアウト */
+/* 2カラム（PC） */
+.two-column,
+.work-block {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+/* 左右交互 */
 .work-block.right {
     flex-direction: row-reverse;
 }
 
-/* 連絡先強調 */
+/* 画像カラム */
+.image-column img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    border-radius: 6px;
+    background: #eee;
+}
+
+/* テキストカラム */
+.text-column {
+    flex: 1;
+    font-size: 1rem;
+}
+
+/* メタ情報 */
+.meta {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.meta li::before {
+    content: "・";
+    margin-right: 4px;
+}
+
+/* 線画サンプル */
+.coming-soon {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* 成長記録の注釈 */
+.note {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* 連絡先（強調） */
 footer {
     background: #e8f0ff;
-    padding: 48px 16px;
-    margin-top: 40px;
+    padding: 64px 16px;
+    margin-top: 60px;
+    text-align: center;
 }
 
 footer h2 {
-    font-size: 1.6rem;
-    margin-bottom: 16px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
 footer p {
-    font-size: 1.1rem;
-    margin: 8px 0;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* -------------------------
+   スマホ対応（重要）
+-------------------------- */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    /* 2カラム → 1カラムに */
+    .two-column,
+    .work-block,
+    .work-block.right {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /* 画像サイズ調整 */
+    .image-column img {
+        max-width: 100%;
+    }
+
+    /* テキストサイズ調整 */
+    .text-column {
+        font-size: 0.95rem;
+    }
+
+    #toc {
+        padding: 12px;
+    }
+
+    #toc a {
+        font-size: 0.95rem;
+    }
+
+    footer h2 {
+        font-size: 1.5rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
 }
 
