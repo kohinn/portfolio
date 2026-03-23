@@ -42,7 +42,7 @@ h3 {
 }
 
 /* ============================
-   自己紹介
+   自己紹介（目次の下）
 ============================ */
 #about h2 {
     margin-top: 32px;
@@ -54,27 +54,15 @@ h3 {
     font-size: 1rem;
 }
 
-/* プロフィール2カラム（PC） */
-.profile-block {
-    display: flex;
-    gap: 32px;
-    margin-top: 24px;
-}
-
-.profile-column {
-    flex: 1;
-}
-
 /* ============================
    目次（中央寄せ＋開閉式）
 ============================ */
 #toc {
     background: #f0f0f0;
-    padding: 16px 24px;
+    padding: 16px;
     margin: 24px auto;
     border-radius: 6px;
     text-align: center;
-    width: 260px; /* 細すぎないように固定幅 */
 }
 
 #toc h2 {
@@ -82,18 +70,13 @@ h3 {
     padding-left: 0;
     font-size: 1.2rem;
     cursor: pointer;
-    margin-bottom: 8px;
 }
 
 #toc ul {
     list-style: none;
     padding-left: 0;
-    margin: 0;
     line-height: 1.9;
-}
-
-/* デフォルトは開いておく */
-#toc ul {
+    margin: 0;
     display: block;
 }
 
@@ -104,16 +87,21 @@ h3 {
 #toc a {
     text-decoration: none;
     color: #333;
-    font-size: 0.98rem;
+    font-size: 1rem;
 }
 
 #toc a:hover {
     text-decoration: underline;
 }
 
-/* 画面幅に関係なく「開閉」できるようにする */
-#toc.closed ul {
-    display: none;
+/* スマホでは閉じる */
+@media (max-width: 768px) {
+    #toc ul {
+        display: none;
+    }
+    #toc.open ul {
+        display: block;
+    }
 }
 
 /* ============================
@@ -127,13 +115,27 @@ h3 {
     margin-bottom: 48px;
 }
 
-/* 左右交互：クラスで制御（HTMLと対応） */
-.work-block.left {
-    flex-direction: row;          /* 画像 → テキスト */
+/* ============================
+   左右交互レイアウト（確実に反映）
+============================ */
+
+/* フルカラーイラスト */
+#fullcolor .work-block:nth-of-type(1) {
+    flex-direction: row; /* 左 */
+}
+#fullcolor .work-block:nth-of-type(2) {
+    flex-direction: row-reverse; /* 右 */
+}
+#fullcolor .work-block:nth-of-type(3) {
+    flex-direction: row; /* 左 */
 }
 
-.work-block.right {
-    flex-direction: row-reverse;  /* テキスト → 画像 */
+/* 2025年作品 */
+#archive .work-block:nth-of-type(1) {
+    flex-direction: row;
+}
+#archive .work-block:nth-of-type(2) {
+    flex-direction: row-reverse;
 }
 
 /* ============================
@@ -216,10 +218,8 @@ footer p {
         font-size: 1.2rem;
     }
 
-    /* 2カラム → 1カラム */
     .two-column,
-    .work-block,
-    .profile-block {
+    .work-block {
         flex-direction: column;
         gap: 16px;
     }
@@ -233,7 +233,6 @@ footer p {
     }
 
     #toc {
-        width: 80%;
         padding: 12px;
     }
 
@@ -249,5 +248,8 @@ footer p {
         font-size: 1rem;
     }
 }
+
+
+
 
 
