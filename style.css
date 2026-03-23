@@ -67,9 +67,6 @@ h3 {
 }
 
 #toc h2 {
-    border: none;
-    padding-left: 0;
-    font-size: 1.2rem;
     cursor: pointer;
 }
 
@@ -98,6 +95,8 @@ h3 {
     #toc ul { display: none; }
     #toc.open ul { display: block; }
 }
+
+
 /* ============================
    2カラム（PC）
 ============================ */
@@ -113,14 +112,15 @@ h3 {
    左右交互レイアウト（確実に反映）
 ============================ */
 
-/* フルカラーイラストの左右交互 */
+/* フルカラーイラスト */
 #fullcolor .work-block:nth-of-type(1) { flex-direction: row; }
 #fullcolor .work-block:nth-of-type(2) { flex-direction: row-reverse; }
 #fullcolor .work-block:nth-of-type(3) { flex-direction: row; }
 
-/* 2025年作品の左右交互 */
+/* 2025年作品 */
 #archive .work-block:nth-of-type(1) { flex-direction: row; }
 #archive .work-block:nth-of-type(2) { flex-direction: row-reverse; }
+
 
 
 /* ============================
