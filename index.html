@@ -25,36 +25,33 @@
         </ul>
     </nav>
 
-    <!-- 自己紹介（目次の下に移動） -->
- <section id="about">
-    <h2>自己紹介</h2>
-    <p class="about">
-        独学でイラストを学び、現在はフルタイム勤務と並行して<br>
-        キャラクターイラストを中心に活動しています。<br>
-        見た人の目を引く、魅力的なキャラクター表現を得意としています。
-    </p>
+    <!-- 自己紹介 -->
+    <section id="about">
+        <h2>自己紹介</h2>
+        <p class="about">
+            独学でイラストを学び、現在はフルタイム勤務と並行して<br>
+            キャラクターイラストを中心に活動しています。<br>
+            見た人の目を引く、魅力的なキャラクター表現を得意としています。
+        </p>
 
-    <div class="profile-block">
-        <div class="profile-column">
-            <h2>スキル</h2>
-            <ul>
-                <li>キャラクターイラスト（立ち絵 / 表情差分 / カラーイラスト）</li>
-                <li>Webサイト制作（HTML / CSS）</li>
-            </ul>
+        <div class="profile-block">
+            <div class="profile-column">
+                <h2>スキル</h2>
+                <ul>
+                    <li>キャラクターイラスト（立ち絵 / 表情差分 / カラーイラスト）</li>
+                    <li>Webサイト制作（HTML / CSS）</li>
+                </ul>
+            </div>
+            <div class="profile-column">
+                <h2>経歴</h2>
+                <ul>
+                    <li>2025年4月　イラストレーターとして本格的に活動開始</li>
+                    <li>2025年5月　初の有償依頼を受注</li>
+                </ul>
+            </div>
         </div>
-        <div class="profile-column">
-            <h2>経歴</h2>
-            <ul>
-                <li>2025年4月　イラストレーターとして本格的に活動開始</li>
-                <li>2025年5月　初の有償依頼を受注</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-
+    </section>
 </header>
-
 
 <main>
 
@@ -78,17 +75,17 @@
         </div>
     </section>
 
-    <!-- 表情差分（まだ未作成） -->
+    <!-- 表情差分 -->
     <section id="expressions">
         <h2>表情差分</h2>
         <p class="coming-soon">※表情差分は現在制作中です。</p>
     </section>
 
-    <!-- フルカラーイラスト（左右交互配置） -->
+    <!-- フルカラーイラスト（1・3左、2右） -->
     <section id="fullcolor">
         <h2>フルカラーイラスト</h2>
 
-        <!-- 1枚目（左） -->
+        <!-- 1枚目（左：画像→テキスト） -->
         <div class="work-block left">
             <div class="image-column">
                 <img src="img/イラスト6ddd.webp" alt="Full color illustration 1" loading="lazy">
@@ -104,7 +101,7 @@
             </div>
         </div>
 
-        <!-- 2枚目（右） -->
+        <!-- 2枚目（右：テキスト→画像） -->
         <div class="work-block right">
             <div class="text-column">
                 <h3>フルカラーイラスト 02</h3>
@@ -120,7 +117,7 @@
             </div>
         </div>
 
-        <!-- 3枚目（左） -->
+        <!-- 3枚目（左：画像→テキスト） -->
         <div class="work-block left">
             <div class="image-column">
                 <img src="img/siba_brlkj.webp" alt="Full color illustration 3" loading="lazy">
@@ -181,7 +178,7 @@
 
 </main>
 
-<!-- 連絡先（強調版） -->
+<!-- 連絡先 -->
 <footer id="contact">
     <div class="contact-box">
         <h2>連絡先</h2>
@@ -191,14 +188,16 @@
 </footer>
 
 <script>
-document.querySelector("#toc h2").addEventListener("click", () => {
-    document.querySelector("#toc").classList.toggle("open");
-});
+const toc = document.querySelector("#toc");
+const tocTitle = document.querySelector("#toc h2");
+
+if (toc && tocTitle) {
+    tocTitle.addEventListener("click", () => {
+        toc.classList.toggle("open");
+    });
+}
 </script>
 
-
-    
 </body>
 </html>
-
 
